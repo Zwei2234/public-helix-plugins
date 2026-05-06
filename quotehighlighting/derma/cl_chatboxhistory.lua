@@ -95,7 +95,7 @@ function PANEL:AddLine(elements, bShouldScroll)
 		end
 	end
 
-		-- QUOTE HIGHLIGHTING
+	-- QUOTE HIGHLIGHTING
 	local concat = table.concat(buffer)
 	if CHAT_CLASS and (CHAT_CLASS.uniqueID != "looc" and CHAT_CLASS.uniqueID != "ooc") then
 		if ix.option.Get("quoteHighlight", true) then
@@ -114,6 +114,7 @@ function PANEL:AddLine(elements, bShouldScroll)
 	panel:Dock(TOP)
 	panel:InvalidateParent(true)
 	panel:SetMarkup(concat)
+	-- END QUOTE HIGHLIGHTING
 
 	if (#self.entries >= maxChatEntries) then
 		local oldPanel = table.remove(self.entries, 1)
